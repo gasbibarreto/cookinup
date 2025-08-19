@@ -1,5 +1,4 @@
 <script lang="ts">
-import IngredienteSelecionavelVue from "./IngredienteSelecionavel.vue";
 import SelecionarIngredientes from "./SelecionarIngredientes.vue";
 import SuaLista from "./SuaLista.vue";
 
@@ -37,7 +36,6 @@ export default{
         @remover-ingrediente="removerIngrediente"
         />
 </main>
-
 </template>
 
 <style scoped>
