@@ -1,11 +1,12 @@
 <script lang="ts">
 import Tag from "./Tag.vue";
+import SelecionarIngredientes from "./SelecionarIngredientes.vue";
 
 export default {
     props: {
         ingredientes: { type: Array as PropType<string[]>, required: true }
     },
-    components: { Tag }
+    components: { Tag, SelecionarIngredientes }
 }
 </script>
 <template>

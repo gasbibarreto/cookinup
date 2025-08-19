@@ -13,6 +13,7 @@ export default {
         //metodo do ciclo de vida. executa depois que as propriedades do data tiverem sido definidas
         this.categorias = await obterCategorias();
     },
+    emits: ['adicionarIngredientes', 'removerIngrediente'],
     components: { CardCategoria }
 }
 </script>
@@ -26,7 +27,10 @@ export default {
     </p>
     <ul class="categorias">
       <li v-for="categoria in categorias" :key="categoria?.nome">
-        <CardCategoria :categoria="categoria"/>
+        <CardCategoria :categoria="categoria"
+        @adicionar-ingrediente="$emit('adicionarIngrediente', $event)"
+        @remover-ingrediente="$emit('removerIngrediente', $event)"
+        />
       </li>
     </ul>
     <p class="paragrafo dica">
