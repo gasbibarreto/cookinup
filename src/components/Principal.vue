@@ -1,4 +1,5 @@
 <script lang="ts">
+import IngredienteSelecionavelVue from "./IngredienteSelecionavel.vue";
 import SelecionarIngredientes from "./SelecionarIngredientes.vue";
 import SuaLista from "./SuaLista.vue";
 
@@ -14,7 +15,11 @@ export default{
         },
         
         removerIngrediente(ingrediente: string) {
-            this.ingredientes.pop(ingrediente)
+            const newIngredientes = this.ingredientes.filter( el => 
+                ingrediente !== el 
+            )
+
+            this.ingredientes = newIngredientes            
         }
     },
     emits: ['adicionarIngrediente'],
