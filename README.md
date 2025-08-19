@@ -39,3 +39,8 @@ npm run dev
 npm run build
 ```
 # cookinup
+
+
+design do projeto no figma
+
+https://www.figma.com/community/file/1419110575525502403/vue-3-entendendo-componentes-diretivas-e-reatividade-no-framework-cookinup
