@@ -28,7 +28,7 @@ export default{
             this.conteudo = pagina
         }
     },
-    emits: ['adicionarIngrediente', 'removerIngrediente', 'buscarReceitas'],
+    emits: ['adicionarIngrediente', 'removerIngrediente', 'buscarReceitas', 'selecionarIngredientes'],
     components: { SelecionarIngredientes, SuaLista, MostrarReceitas }
 }
     
@@ -44,7 +44,7 @@ export default{
         @buscar-receitas="navegarPagina('MostrarReceitas')"
         />
     
-    <MostrarReceitas v-else-if="conteudo === 'MostrarReceitas'"  />
+    <MostrarReceitas v-else-if="conteudo === 'MostrarReceitas'"  @selecionar-ingredientes="navegarPagina('SelecionarIngredientes')" />
 </main>         
 </template>
 
