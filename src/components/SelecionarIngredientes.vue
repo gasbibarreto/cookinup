@@ -2,6 +2,7 @@
 import { obterCategorias } from '@/http/index'
 import type ICategoria from '@/interfaces/iCategoria';
 import CardCategoria from './CardCategoria.vue';
+import BotaoPrincipal from './BotaoPrincipal.vue';
 
 export default {
     data() {
@@ -13,8 +14,8 @@ export default {
         //metodo do ciclo de vida. executa depois que as propriedades do data tiverem sido definidas
         this.categorias = await obterCategorias();
     },
-    emits: ['adicionarIngredientes', 'removerIngrediente'],
-    components: { CardCategoria }
+    emits: ['adicionarIngredientes', 'removerIngrediente', 'buscarReceitas'],
+    components: { CardCategoria, BotaoPrincipal }
 }
 </script>
 <template>
@@ -38,6 +39,8 @@ export default {
     </p>
 
     <p>Veja as opcoes de receitas que encontramos com os ingredientes que voce tem por ai!</p>
+    
+    <BotaoPrincipal :texto="'Buscar receitas'" @click="$emit('buscarReceitas')"/>
   </section>
 </template>
 
